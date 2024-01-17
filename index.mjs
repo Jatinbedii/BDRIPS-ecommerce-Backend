@@ -16,7 +16,6 @@ app.get('/',(req,res)=>{
 
 
 
-
 app.use('/api',Authrouter);
 app.use('/api',adminRouter);
 app.use('/api',Productrouter);
