@@ -9,6 +9,7 @@ import Cartrouter from "./routes/cart.mjs";
 import Orderrouter from "./routes/order.mjs";
 const app = express();
 app.use(express.json());
+app.set("trust proxy", 1);
 app.use(cors({ credentials: true ,origin: process.env.FRONTEND, }));
 app.get('/',(req,res)=>{
     res.json({working:"working"})
