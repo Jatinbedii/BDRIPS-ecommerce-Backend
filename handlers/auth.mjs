@@ -19,7 +19,7 @@ async function loginhandler(req,res){
     if(comparedpass){
     const token = generateToken(user._id);
 
-    return res.status(201).cookie('jwt',token,{ expires: new Date(Date.now() + 24 * 60 * 60 * 1000), sameSite: "None"}).json(user);
+    return res.status(201).cookie('jwt',token,{ expires: new Date(Date.now() + 24 * 60 * 60 * 1000), sameSite: "None",secure: true}).json(user);
 
     }else{
         return res.json({error: "Incorrect information"})
